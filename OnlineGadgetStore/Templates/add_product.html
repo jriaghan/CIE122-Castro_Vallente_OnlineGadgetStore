@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+	<div class = "container">
+		<h4>Add a Product</h4>
+		<form action="../process_add_product" method="POST">
+			<div class="row">Name: </div>
+			<div class="row"><input type="text" name="name"></div>
+			<div class="row">Brand: </div>
+			<div class="row"><input type="text" name="brand"></div>
+			<div class="row">Quantity: </div>
+			<div class="row"><input type="text" name="quantity"></div>
+			<div class="row">Price: </div>
+			<div class="row"><input type="text" name="price"></div>
+			<div class="row">Type: </div>
+			<div class="row"><input type="text" name="type"></div>
+			<div class="row">Desc: </div>
+			<div class="row"><input type="text" name="desc"></div>
+			<div class="row"><input type="submit" value="Submit"></div>
+		</form>
+	</div>
+</body>
+</html>

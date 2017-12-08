@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Product</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+	<div class="container">
+        <section class="header">
+        <h1>View Product Page</h1>
+        </section>
+        <div class="row">
+        {% if jlist1 %}
+            <h4>Phones</h4>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Brand</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                </tr>
+                {% for slimmy in jlist1 %}
+                    <tr>
+                        <td>{{ slimmy.id }}</td>
+                        <td>{{ slimmy.name }}</td>
+                        <td>{{ slimmy.brand }}</td>
+                        <td>{{ slimmy.quantity }}</td>
+                        <td>{{ slimmy.price }}</td>
+                        <td>{{ slimmy.description }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <h4>Laptops</h4>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Brand</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                </tr>
+                {% for slimmy in jlist2 %}
+                    <tr>
+                        <td>{{ slimmy.id }}</td>
+                        <td>{{ slimmy.name }}</td>
+                        <td>{{ slimmy.brand }}</td>
+                        <td>{{ slimmy.quantity }}</td>
+                        <td>{{ slimmy.price }}</td>
+                        <td>{{ slimmy.description }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <h4>Tablets</h4>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Brand</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                </tr>
+                {% for slimmy in jlist3 %}
+                    <tr>
+                        <td>{{ slimmy.id }}</td>
+                        <td>{{ slimmy.name }}</td>
+                        <td>{{ slimmy.brand }}</td>
+                        <td>{{ slimmy.quantity }}</td>
+                        <td>{{ slimmy.price }}</td>
+                        <td>{{ slimmy.description }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+                <p>No products found.</p>
+            {% endif %}
+        </div>
+
+        <div class="container">
+            <h5>Enter data needed. If no choice, write 0</h5>
+        <form action="../del_up_product" method="POST">
+			<div class="row">Enter Product ID to Delete: </div>
+			<div class="row"><input type="text" name="delete"></div>
+			<div class="row">Enter Product ID to Update: </div>
+			<div class="row"><input type="text" name="id"></div>
+            <div class="row">Enter New Quantity: </div>
+			<div class="row"><input type="text" name="quantity"></div>
+			<div class="row"><input type="submit" value="Submit"></div>
+		</form>
+        </div>
+        <div class = "row" id = "new-section">
+            <h3><a href="/admin_home">Back to Homepage</a></h3>
+        </div>
+    </div>
+</body>
+</html>

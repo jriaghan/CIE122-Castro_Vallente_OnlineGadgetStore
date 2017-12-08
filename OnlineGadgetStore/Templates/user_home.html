@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Home</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+	<div class="container">
+        <section class="header">
+        <h1>Welcome back to Online Gadget Store</h1>
+        </section>
+        <h4>Here are you account details: </h4>
+        <form class="row">
+            {% if jlist %}
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Credit</th>
+                </tr>
+                {% for slimmy in jlist %}
+                    <tr>
+                        <td>{{ slimmy.name }}</td>
+                        <td>{{ slimmy.address }}</td>
+                        <td>{{ slimmy.credit }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+                <p>No users found.</p>
+            {% endif %}
+            <h4>Your shopping cart: </h4>
+            {% if jlist1 %}
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+                {% for slimmy in jlist1 %}
+                    <tr>
+                        <td>{{ slimmy.name }}</td>
+                        <td>{{ slimmy.price }}</td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+            <table>
+                <tr>
+                    <th>Total Price: </th>
+                </tr>
+                {% for slimmy in jlist2 %}
+                    <tr>
+                        <td>{{ slimmy.price }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+            <div class="row"><a href="/process_confirm_cart">Checkout Cart</a></div>
+
+            {% else %}
+                <p>No users found.</p>
+            {% endif %}
+
+
+        <div class="container">
+            <h5><a href="/user_view_product">Shop for more products</a></h5>
+
+        </div>
+        <div class="row"><a href="/">Logout</a></div>
+
+    </div>
+</body>
+</html>

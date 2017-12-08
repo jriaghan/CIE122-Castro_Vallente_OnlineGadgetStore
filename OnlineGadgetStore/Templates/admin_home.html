@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+<div class = "container">
+    <section class="header">
+            <h2>Welcome Back, Administrator!</h2>
+    </section>
+    <section class="header">
+        <h1>Select a page to access: </h1>
+        <ul>
+            <li><a href="/add_user">Add User</a></li>
+            <li><a href="/view_user">View Users Page</a></li>
+            <li><a href="/add_product">Add Product</a></li>
+            <li><a href="/view_product">View Products</a></li>
+        </ul>
+    </section>
+    <div class="row"><a href="/">Logout</a></div>
+</div>
+
+</body>
+</html>

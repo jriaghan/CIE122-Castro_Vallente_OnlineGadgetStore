@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Gadget Store</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+<div class = "container">
+    {% block body %}
+    <h1>Welcome to Online Gadget Store</h1>
+    <form action="/index" method="POST">
+    <input type="text" name="username" placeholder="Username"><br>
+    <input type="password" name="password" placeholder="Password"><br>
+    <input type="submit" value="Log in">
+        <div class = "container">
+            <h5>Don't have an account yet? <a href="/register">Click here to Register</a></h5>
+        </div>
+</form>
+{% endblock %}
+</div>
+
+</body>
+</html>

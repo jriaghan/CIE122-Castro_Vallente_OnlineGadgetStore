@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+	<div class = "container">
+		<h4>Enter the following details</h4>
+		<form action="../process_add_user/" method="POST">
+			<div class="row">Username: </div>
+			<div class="row"><input type="text" name="username"></div>
+			<div class="row">Password: </div>
+			<div class="row"><input type="password" name="password"></div>
+			<div class="row">Full Name: </div>
+			<div class="row"><input type="text" name="name"></div>
+			<div class="row">Address: </div>
+			<div class="row"><input type="text" name="address"></div>
+			<div class="row">Credit Card Number: </div>
+			<div class="row"><input type="text" name="credit"></div>
+			<div class="row"><input type="submit" value="Register"></div>
+		</form>
+	</div>
+</body>
+</html>
